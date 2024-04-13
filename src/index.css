@@ -8,21 +8,16 @@ body {
 }
 
 :root {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   background-color: #fff;
-  /* color: #0a0a11; */
   min-height: 100vh;
 }
 
-/* .descItem {
-  @apply after:content-['|'] after:ml-[6px] after:text-after-desc-element;
+.input-form {
+  @apply placeholder-primary-text-color p-[18px] w-full border border-border-color h-[54px] rounded-[12px] outline-none;
 }
 
-.descWrap {
-  @apply flex flex-row flex-wrap gap-x-[6px] text-[12px] leading-[1.5] font-normal text-desc-text-color;
+.errorMsg {
+  @apply text-error-color text-[12px] ml-[24px];
 }
-
-.arrow {
-  @apply absolute bottom-[14px] right-[14px] cursor-pointer;
-} */

@@ -1,29 +1,29 @@
 @font-face {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Roboto', sans-serif;
   src:
-    local('Manrope'),
-    url('../src/assets/fonts/Manrope-Regular.ttf') format('truetype');
+    local('Roboto'),
+    url('../assets/fonts/Roboto-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Roboto', sans-serif;
   src:
-    local('Manrope'),
-    url('../src/assets/fonts/Manrope-Medium.ttf') format('truetype');
+    local('Roboto'),
+    url('../assets/fonts/Roboto-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Roboto', sans-serif;
   src:
-    local('Manrope'),
-    url('../src/assets/fonts/Manrope-SemiBold.ttf') format('truetype');
-  font-weight: 600;
+    local('Roboto'),
+    url('../assets/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }

@@ -1,21 +1,20 @@
 export const HEADER_NAV_LINKS = [
   {
-    id: 0,
+    id: 'home',
     href: '/',
     title: 'Home',
   },
   {
-    id: 1,
+    id: 'teachers',
     href: '/teachers',
     title: 'Teachers',
   },
   {
-    id: 2,
+    id: 'favorites',
     href: '/favorites',
     title: 'Favorites',
   },
 ];
-
 
 export const CAR_BRAND = [
   'Buick',

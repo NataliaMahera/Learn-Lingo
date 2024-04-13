@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
-import Header from '../Header/Header';
 import Loader from '../Loader/Loader';
 import Footer from '../Footer/Footer';
+import AppBar from '../AppBar/AppBar';
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
+      <AppBar />
       <div className="min-h-[70vh]">
         <Suspense fallback={<Loader />}>
           <main>{children}</main>

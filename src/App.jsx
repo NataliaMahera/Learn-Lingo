@@ -11,7 +11,6 @@ import {
   HOME_ROUTE,
   TEACHERS_ROUTE,
 } from './constants/routes';
-import RestrictedRoutes from './routes/RestrictedRoutes';
 import PrivateRoutes from './routes/PrivateRoutes';
 
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -42,14 +41,7 @@ function App() {
     <Layout>
       <Routes>
         <Route path={HOME_ROUTE} element={<Home />} />
-        <Route
-          path={TEACHERS_ROUTE}
-          element={
-            <RestrictedRoutes>
-              <Teachers />
-            </RestrictedRoutes>
-          }
-        />
+        <Route path={TEACHERS_ROUTE} element={<Teachers />} />
         <Route
           path={FAVORITES_ROUTE}
           element={

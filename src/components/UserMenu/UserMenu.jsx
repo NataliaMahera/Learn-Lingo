@@ -5,6 +5,7 @@ import { removeUser } from '../../redux/auth/authReducer';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import auth from '../../firebase';
+import { HOME_ROUTE } from '../../constants/routes';
 
 const UserMenu = () => {
   const user = useSelector(selectAuthUser);
@@ -13,7 +14,7 @@ const UserMenu = () => {
   const logOut = () => {
     signOut(auth);
     dispatch(removeUser());
-    navigate('/');
+    navigate(HOME_ROUTE);
   };
 
   const dispatch = useDispatch();

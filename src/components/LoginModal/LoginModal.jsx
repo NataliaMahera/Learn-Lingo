@@ -12,6 +12,7 @@ import {
   BlockedEyeIcon,
   OpenEyeIcon,
 } from '../ReUseComponents/Buttons/Buttons';
+import { HOME_ROUTE } from '../../constants/routes';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -38,7 +39,7 @@ const LoginModal = ({ closeModal }) => {
       dispatch(setUser(user));
       resetForm();
       closeModal();
-      navigate('/');
+      navigate(HOME_ROUTE);
     } catch (error) {
       console.log(error);
     }

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import sprite from '../../assets/icons/sprite.svg';
+import { HOME_ROUTE } from '../../constants/routes';
 
 const Logo = () => {
   return (
-    <Link to={'/'} className="flex gap-x-[8px] items-center">
+    <Link to={HOME_ROUTE} className="flex gap-x-[8px] items-center">
       <svg className="w-[22px] h-[22px] md:w-[28px] md:h-[28px]">
         <use href={sprite + '#icon-ukraine'}></use>
       </svg>

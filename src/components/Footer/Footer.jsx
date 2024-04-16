@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import sprite from '../../assets/icons/sprite.svg';
+import { HOME_ROUTE } from '../../constants/routes';
 
 const Footer = () => {
   return (
     <section className="container py-[50px] border-after-desc-element border-t-[1px]">
       <div className="flex justify-center items-center gap-x-1">
-        <Link to={'/'} className="flex gap-x-[8px] items-center">
+        <Link to={HOME_ROUTE} className="flex gap-x-[8px] items-center">
           <svg className="w-[22px] h-[22px] md:w-[20px] md:h-[20px]">
             <use href={sprite + '#icon-ukraine'}></use>
           </svg>

@@ -1,47 +1,99 @@
-import { nanoid } from '@reduxjs/toolkit';
 import { useEffect, useState } from 'react';
-import TeachersItem from './TeachersItem/TeachersItem';
-import { child, get, getDatabase, ref } from 'firebase/database';
+import TeachersItem from '../TeachersItem/TeachersItem';
+import {
+  endAt,
+  get,
+  limitToFirst,
+  onValue,
+  orderByKey,
+  query,
+  ref,
+  startAfter,
+} from 'firebase/database';
+import { db } from '../../firebase';
+import { TeachersPageUniversalButton } from '../ReUseComponents/Buttons/Buttons';
 
 const TeachersList = () => {
   const [teachers, setTeachers] = useState([]);
+  const [lastKey, setLastKey] = useState('');
+  const [loadMoreData, setLoadMoreData] = useState(true);
+  const cardLimitOnPage = 4;
 
-  const getTeachersData = async () => {
+  // const getAllTeachersData = async () => {
+  //   try {
+  //     const dbRef = ref(getDatabase());
+  //     const snapshot = await get(child(dbRef, 'teachers/'));
+  //     if (snapshot.exists()) {
+  //       const allTeachersData = snapshot.val();
+  //       setTeachers(allTeachersData);
+  //       console.log('allTeachersData: ', allTeachersData);
+  //     } else {
+  //       console.log('No data available');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error fetching teachers data:', error);
+  //   }
+  // };
+
+  const initialQuery = query(
+    ref(db, 'teachers'),
+    orderByKey(),
+    endAt(lastKey + 3)
+  );
+
+  const getTeachersData = async (queryRef) => {
     try {
-      const dbRef = ref(getDatabase());
-      const snapshot = await get(child(dbRef, 'teachers/'));
-      if (snapshot.exists()) {
-        const teachersData = snapshot.val();
-        setTeachers(teachersData);
-        console.log('teachersData: ', teachersData);
-      } else {
-        console.log('No data available');
-      }
+      onValue(queryRef, (snapshot) => {
+        const newTeacherData = [];
+        snapshot.forEach((childSnapshot) => {
+          const childKey = childSnapshot.key;
+          const childData = childSnapshot.val();
+          newTeacherData.push({ id: childKey, ...childData });
+          setLastKey(childKey);
+        });
+        setTeachers((prevState) => [...prevState, ...newTeacherData]);
+        if (newTeacherData.length < cardLimitOnPage && teachers.length > 0)
+          setLoadMoreData(false);
+      });
     } catch (error) {
-      console.error('Error fetching teachers data:', error);
+      console.error(error.message);
     }
   };
 
+  const handleLoadMoreData = () => {
+    const nextQuery = query(
+      ref(db, 'teachers'),
+      orderByKey(),
+      startAfter(lastKey),
+      endAt(String(Number(lastKey) + 4))
+    );
+    getTeachersData(nextQuery);
+  };
+
   useEffect(() => {
-    getTeachersData();
+    getTeachersData(initialQuery);
+    // getAllTeachersData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
-      <ul className="">
+      <ul className="flex flex-col w-auto gap-[32px]">
         {teachers.map((teacher) => {
-          const id = nanoid();
-          return <TeachersItem key={id} data={teacher} />;
+          return <TeachersItem key={teacher.id} teacher={teacher} />;
         })}
       </ul>
-      {/* {teachers.length > 0 && ( // Перевірити, чи масив teachers має елементи
-        <ul className="">
-          {teachers.map((teacher) => (
-            <TeachersItem key={nanoid()} data={teacher} />
-          ))}
-        </ul>
+      {loadMoreData && (
+        // <button type="button" onClick={handleLoadMoreData}>
+        //   Load More
+        // </button>
+        <TeachersPageUniversalButton
+          onClick={handleLoadMoreData}
+          className="mt-[64px]"
+        >
+          Load More
+        </TeachersPageUniversalButton>
       )}
-      {!teachers.length && <p>Завантажуються вчителі...</p>} */}
     </>
   );
 };

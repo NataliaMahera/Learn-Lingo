@@ -113,32 +113,43 @@ export const BlockedEyeIcon = ({ onClick }) => {
 //   );
 // };
 
-// export const LearnMoreButton = ({ children, onClick }) => {
-//   return (
-//     <button
-//       type="button"
-//       className="hover:shadow-lg shadow-primary-text-button-color/50 font-semibold text-[14px] leading-[1.43] mt-[28px] w-full py-[12px] rounded-[12px] bg-accent-color text-btn-text-color hover:bg-accent-hover-color transition-colors"
-//       onClick={onClick}
-//     >
-//       {children}
-//     </button>
-//   );
-// };
+export const ReadMoreButton = ({ children, onClick }) => {
+  return (
+    <button
+      type="button"
+      className="underline transition-colors hover:text-accent-color"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
 
-// export const ToggleFavoritesButton = ({ onClick, id }) => {
-//   return (
-//     <button
-//       type="button"
-//       className="ease-in-out duration-100 hover:scale-[1.035] hover:contrast-[0.9] absolute top-[14px] right-[14px] cursor-pointer "
-//       onClick={onClick}
-//       id={id}
-//     >
-//       <svg className="ease-in-out duration-100 hover:scale-[1.035] hover:contrast-[0.9] fill-none stroke-[1.5px] stroke-stroke-color w-[18px] h-[18px]">
-//         <use href={sprite + '#icon-heart'}></use>
-//       </svg>
-//     </button>
-//   );
-// };
+export const TeachersPageUniversalButton = ({ children, onClick }) => {
+  return (
+    <button
+      type="button"
+      className="mt-[32px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
+
+export const ToggleFavoritesButton = ({ onClick }) => {
+  return (
+    <button
+      type="button"
+      className="absolute top-[24px] right-[24px] flex justify-start ease-in-out duration-100 hover:scale-[1.035] hover:contrast-[0.9] cursor-pointer "
+      onClick={onClick}
+    >
+      <svg className="ease-in-out duration-100 hover:scale-[1.035] hover:contrast-[0.9] fill-none stroke-[1.5px] stroke-primary-text-color w-[26px] h-[26px]">
+        <use href={sprite + '#icon-heart'}></use>
+      </svg>
+    </button>
+  );
+};
 
 // export const ToggleFavoritesDeleteButton = ({ onClick, id }) => {
 //   return (

@@ -10,7 +10,7 @@ body {
 :root {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  background-color: #fff;
+  background-color: #f8f8f8;
   min-height: 100vh;
 }
 
@@ -20,4 +20,8 @@ body {
 
 .errorMsg {
   @apply text-error-color text-[12px] ml-[24px];
+}
+
+.descItem {
+  @apply after:content-['|'] after:ml-[16px] after:mr-[16px] after:text-decor-text-element;
 }

@@ -2,7 +2,6 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Field, Form, Formik, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import auth from '../../firebase';
-import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { setUser } from '../../redux/auth/authReducer';
 import { selectAuthIsLoading } from '../../redux/auth/authSelectors';
@@ -10,38 +9,36 @@ import { useState } from 'react';
 import Loader from '../Loader/Loader';
 import {
   BlockedEyeIcon,
+  FormBtn,
   OpenEyeIcon,
 } from '../ReUseComponents/Buttons/Buttons';
-import { HOME_ROUTE } from '../../constants/routes';
-
-const LoginSchema = Yup.object().shape({
-  email: Yup.string()
-    .email('Invalid email! Example "your@test.com"')
-    .required('Required'),
-  password: Yup.string()
-    .min(6, 'Too Short! At least 6 charackters.')
-    .max(20, 'Too Long! Max 20 charackters.')
-    .required('Required'),
-});
+import { TEACHERS_ROUTE } from '../../constants/routes';
+import { toast } from 'react-toastify';
+import { styleToastify } from '../Toster/tostify';
+import { LoginSchema } from '../../helpers/schemas';
 
 const initialValues = { email: '', password: '' };
 
 const LoginModal = ({ closeModal }) => {
   const isLoading = useSelector(selectAuthIsLoading);
   const [showPassword, setShowPassword] = useState(false);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleLoginSubmit = async ({ email, password }, { resetForm }) => {
     try {
       const { user } = await signInWithEmailAndPassword(auth, email, password);
-      console.log(user);
       dispatch(setUser(user));
       resetForm();
       closeModal();
-      navigate(HOME_ROUTE);
+      navigate(TEACHERS_ROUTE);
+      toast.success('You have successfully logged in!', styleToastify);
     } catch (error) {
-      console.log(error);
+      toast.error(
+        'Oops something went wrong, check if you entered the data correctly',
+        styleToastify
+      );
     }
   };
 
@@ -93,12 +90,7 @@ const LoginModal = ({ closeModal }) => {
             )}
           </div>
           <ErrorMessage name="password" component="span" className="errorMsg" />
-          <button
-            type="submit"
-            className="text-[18px] leading-[1.56] font-bold mt-[22px] bg-accent-color p-y-[16px] w-full text-primary-text-color h-[60px] rounded-[12px] outline-none"
-          >
-            Log In
-          </button>
+          <FormBtn>Log In</FormBtn>
         </Form>
       </Formik>
     </>

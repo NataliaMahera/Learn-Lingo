@@ -1,5 +1,4 @@
 import { Field, Form, Formik, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,23 +9,14 @@ import Loader from '../Loader/Loader';
 import { useState } from 'react';
 import {
   BlockedEyeIcon,
+  FormBtn,
   OpenEyeIcon,
 } from '../ReUseComponents/Buttons/Buttons';
-import { HOME_ROUTE } from '../../constants/routes';
+import { TEACHERS_ROUTE } from '../../constants/routes';
+import { toast } from 'react-toastify';
+import { styleToastify } from '../Toster/tostify';
+import { RegisterSchema } from '../../helpers/schemas';
 
-const RegisterSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, 'Too Short! At least 2 charackters.')
-    .max(20, 'Too Long!')
-    .required('Required'),
-  email: Yup.string()
-    .email('Invalid email! Example "your@test.com"')
-    .required('Required'),
-  password: Yup.string()
-    .min(6, 'Too Short! At least 6 charackters.')
-    .max(20, 'Too Long! Max 20 charackters.')
-    .required('Required'),
-});
 const initialValues = { name: '', email: '', password: '' };
 
 const RegisterModal = ({ closeModal }) => {
@@ -46,17 +36,21 @@ const RegisterModal = ({ closeModal }) => {
         email,
         password
       );
-      console.log(user);
 
       await updateProfile(user, {
         displayName: name,
       });
+
       dispatch(setUser(user));
       resetForm();
       closeModal();
-      navigate(HOME_ROUTE);
+      navigate(TEACHERS_ROUTE);
+      toast.success('You have successfully registered!', styleToastify);
     } catch (error) {
-      console.log(error);
+      toast.error(
+        'Oops, you already have an account with the following data',
+        styleToastify
+      );
     }
   };
 
@@ -118,14 +112,8 @@ const RegisterModal = ({ closeModal }) => {
               />
             )}
           </div>
-
           <ErrorMessage name="password" component="span" className="errorMsg" />
-          <button
-            type="submit"
-            className="text-[18px] leading-[1.56] font-bold mt-[22px] bg-accent-color p-y-[16px] w-full text-primary-text-color h-[60px] rounded-[12px] outline-none"
-          >
-            Sign Up
-          </button>
+          <FormBtn>Sign Up</FormBtn>
         </Form>
       </Formik>
     </>

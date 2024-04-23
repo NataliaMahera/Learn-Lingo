@@ -16,31 +16,10 @@ export const HEADER_NAV_LINKS = [
   },
 ];
 
-export const CAR_BRAND = [
-  'Buick',
-  'Volvo',
-  'HUMMER',
-  'Subaru',
-  'Mitsubishi',
-  'Nissan',
-  'Lincoln',
-  'GMC',
-  'Hyundai',
-  'MINI',
-  'Bentley',
-  'Mercedes-Benz',
-  'Aston Martin',
-  'Pontiac',
-  'Lamborghini',
-  'Audi',
-  'BMW',
-  'Chevrolet',
-  'Mercedes-Benz',
-  'Chrysler',
-  'Kia',
-  'Land',
-];
-
-export const PRICE_HOUR = [
-  30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150,
+export const options = [
+  { name: 'Career and business', id: '1' },
+  { name: 'Lesson for kids', id: '2' },
+  { name: 'Living abroad', id: '3' },
+  { name: 'Exams and coursework', id: '4' },
+  { name: 'Culture, travel or hobby', id: '5' },
 ];

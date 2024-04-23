@@ -7,7 +7,7 @@ export const LinkHeaderNav = ({ children, to }) => {
       to={to}
       className={({ isActive }) => {
         return (
-          'font-normal text-[14px} md:text-[16px] leading-[1.25]' +
+          'font-normal transition-colors hover:text-accent-color-btn text-[14px} md:text-[16px] leading-[1.25] ' +
           (!isActive
             ? ' text-primary-text-color'
             : ' text-accent-color transition')
@@ -65,6 +65,17 @@ export const RegisterBtn = ({ onClick }) => {
   );
 };
 
+export const FormBtn = ({ children }) => {
+  return (
+    <button
+      type="submit"
+      className="transition-colors hover:bg-accent-color-btn text-[18px] leading-[1.56] font-bold mt-[22px] bg-accent-color p-y-[16px] w-full text-primary-text-color h-[60px] rounded-[12px] outline-none"
+    >
+      {children}
+    </button>
+  );
+};
+
 export const CloseModalButton = ({ onClick }) => {
   return (
     <button
@@ -83,7 +94,7 @@ export const OpenEyeIcon = ({ onClick }) => {
   return (
     <svg
       onClick={onClick}
-      className="absolute w-[20px] h-[20px] top-[18px] right-[18px] fill-icon-color"
+      className="cursor-pointer absolute w-[20px] h-[20px] top-[18px] right-[18px] fill-icon-color"
     >
       <use href={sprite + '#icon-eye'}></use>
     </svg>
@@ -94,24 +105,12 @@ export const BlockedEyeIcon = ({ onClick }) => {
   return (
     <svg
       onClick={onClick}
-      className="absolute w-[20px] h-[20px] top-[18px] right-[18px] fill-icon-color "
+      className="cursor-pointer absolute w-[20px] h-[20px] top-[18px] right-[18px] fill-icon-color "
     >
       <use href={sprite + '#icon-eye-blocked'}></use>
     </svg>
   );
 };
-
-// export const LoadMoreButton = ({ onClick }) => {
-//   return (
-//     <button
-//       type="button"
-//       className="transition-colors hover:text-accent-hover-color block mb-[70px] underline mx-auto text-[16px] leading-[1.5] font-medium text-accent-color"
-//       onClick={onClick}
-//     >
-//       Load more
-//     </button>
-//   );
-// };
 
 export const ReadMoreButton = ({ children, onClick }) => {
   return (
@@ -129,7 +128,7 @@ export const BookLessonButton = ({ children, onClick }) => {
   return (
     <button
       type="button"
-      className="mt-[32px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
+      className="mt-[32px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] transition-colors bg-accent-color  hover:bg-accent-color-btn"
       onClick={onClick}
     >
       {children}
@@ -174,18 +173,6 @@ export const ToggleFavoritesButton = ({ onClick }) => {
 //       <svg className="ease-in-out duration-100 hover:scale-[1.035] hover:contrast-[0.9] stroke-[1.5px] stroke-accent-color fill-accent-color w-[18px] h-[18px]">
 //         <use href={sprite + '#icon-active-heart'}></use>
 //       </svg>
-//     </button>
-//   );
-// };
-
-// export const FilterButton = ({ type, onClick, children }) => {
-//   return (
-//     <button
-//       className="hover:shadow-lg shadow-primary-text-button-color/50 font-semibold text-[14px] leading-[1.43] mt-[24px] py-[14px] px-[44px] rounded-[12px] bg-accent-color text-btn-text-color hover:bg-accent-hover-color focus:outline-none transition-colors"
-//       type={type}
-//       onClick={onClick}
-//     >
-//       {children}
 //     </button>
 //   );
 // };

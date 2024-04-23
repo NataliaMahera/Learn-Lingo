@@ -3,6 +3,7 @@ import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 
 const {
+ 
   VITE_AUTH_DOMAIN,
   VITE_PROJECT_ID,
   VITE_STORAGE_BACKET,
@@ -12,7 +13,7 @@ const {
 } = import.meta.env;
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_API_KEY,
+  apiKey: 'AIzaSyB27k5q4hCUt97rf8cKwbDVqFgq7wjS9o4',
   authDomain: VITE_AUTH_DOMAIN,
   databaseURL: VITE_DATABASE_URL,
   projectId: VITE_PROJECT_ID,

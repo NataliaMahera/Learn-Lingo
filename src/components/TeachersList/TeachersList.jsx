@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import TeachersItem from '../TeachersItem/TeachersItem';
 import {
   endAt,
-  get,
-  limitToFirst,
   onValue,
   orderByKey,
   query,
@@ -12,11 +10,17 @@ import {
 } from 'firebase/database';
 import { db } from '../../firebase';
 import { LoadMoreButton } from '../ReUseComponents/Buttons/Buttons';
+import { useSelector } from 'react-redux';
+import { selectAuthIsLoading } from '../../redux/auth/authSelectors';
+import Loader from '../Loader/Loader';
+import { toast } from 'react-toastify';
+import { styleToastify } from '../Toster/tostify';
 
 const TeachersList = () => {
   const [teachers, setTeachers] = useState([]);
   const [lastKey, setLastKey] = useState('');
   const [loadMoreData, setLoadMoreData] = useState(true);
+  const isLoading = useSelector(selectAuthIsLoading);
   const cardLimitOnPage = 4;
 
   // const getAllTeachersData = async () => {
@@ -57,6 +61,10 @@ const TeachersList = () => {
       });
     } catch (error) {
       console.error(error.message);
+      toast.error(
+        'Oops something went wrong, error fetching teachers',
+        styleToastify
+      );
     }
   };
 
@@ -76,6 +84,10 @@ const TeachersList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
   return (
     <>
       <ul className="flex flex-col w-auto gap-[32px]">
@@ -83,10 +95,7 @@ const TeachersList = () => {
           return <TeachersItem key={teacher.id} teacher={teacher} />;
         })}
       </ul>
-      {loadMoreData && (
-        // <button type="button" onClick={handleLoadMoreData}>
-        //   Load More
-        // </button>
+      {loadMoreData && teachers.length > 0 && (
         <LoadMoreButton onClick={handleLoadMoreData}>Load More</LoadMoreButton>
       )}
     </>

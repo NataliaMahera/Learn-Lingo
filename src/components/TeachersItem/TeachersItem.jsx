@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import sprite from '../../assets/icons/sprite.svg';
 import {
+  BookLessonButton,
   ReadMoreButton,
-  TeachersPageUniversalButton,
   ToggleFavoritesButton,
 } from '../ReUseComponents/Buttons/Buttons';
 
@@ -156,9 +156,7 @@ const TeachersItem = ({ teacher }) => {
           ))}
         </ul>
         {!showReadMore && (
-          <TeachersPageUniversalButton className="mt-[32px]">
-            Book trial lesson
-          </TeachersPageUniversalButton>
+          <BookLessonButton>Book trial lesson</BookLessonButton>
         )}
       </div>
     </li>

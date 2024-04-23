@@ -11,7 +11,7 @@ import {
   startAfter,
 } from 'firebase/database';
 import { db } from '../../firebase';
-import { TeachersPageUniversalButton } from '../ReUseComponents/Buttons/Buttons';
+import { LoadMoreButton } from '../ReUseComponents/Buttons/Buttons';
 
 const TeachersList = () => {
   const [teachers, setTeachers] = useState([]);
@@ -87,12 +87,7 @@ const TeachersList = () => {
         // <button type="button" onClick={handleLoadMoreData}>
         //   Load More
         // </button>
-        <TeachersPageUniversalButton
-          onClick={handleLoadMoreData}
-          className="mt-[64px]"
-        >
-          Load More
-        </TeachersPageUniversalButton>
+        <LoadMoreButton onClick={handleLoadMoreData}>Load More</LoadMoreButton>
       )}
     </>
   );

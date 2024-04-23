@@ -125,11 +125,23 @@ export const ReadMoreButton = ({ children, onClick }) => {
   );
 };
 
-export const TeachersPageUniversalButton = ({ children, onClick }) => {
+export const BookLessonButton = ({ children, onClick }) => {
   return (
     <button
       type="button"
       className="mt-[32px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
+
+export const LoadMoreButton = ({ children, onClick }) => {
+  return (
+    <button
+      type="button"
+      className="block m-auto mt-[64px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
       onClick={onClick}
     >
       {children}

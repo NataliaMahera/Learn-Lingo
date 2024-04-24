@@ -2,7 +2,7 @@ import Hero from '../../components/Hero/Hero';
 
 const Home = () => {
   return (
-    <section className="px-[64px] flex flex-col justify-center items-center gap-[24px]">
+    <section className="container lg:container md:px-[64px] mx-auto">
       <Hero />
     </section>
   );

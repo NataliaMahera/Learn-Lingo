@@ -7,6 +7,14 @@ body {
   height: 100%;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+}
 :root {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -56,4 +64,11 @@ body {
 
 .remove-favorite-icon {
   @apply fill-accent-color stroke-accent-color w-[20px] h-[20px];
+}
+
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0, auto;
+  }
 }

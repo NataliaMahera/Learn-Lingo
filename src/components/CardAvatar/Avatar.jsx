@@ -1,6 +1,6 @@
 import sprite from '../../assets/icons/sprite.svg';
 
-const CardAvatar = ({ teacher }) => {
+const Avatar = ({ teacher }) => {
   const { name, surname, avatar_url } = teacher || {};
   return (
     <div className=" relative flex justify-center items-center w-[120px] h-[120px] rounded-[50%] border-[3px] border-secondary-accent-color">
@@ -16,4 +16,4 @@ const CardAvatar = ({ teacher }) => {
   );
 };
 
-export default CardAvatar;
+export default Avatar;

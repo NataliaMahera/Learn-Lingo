@@ -15,8 +15,8 @@ import {
   deleteFromFavorites,
 } from '../../redux/favorites/favoritesReducer';
 import CardComponent from '../CardComponent/CardComponent';
-import CardAvatar from '../CardAvatar/Cardavatar';
 import { AvatarGenerator } from 'random-avatar-generator';
+import Avatar from '../CardAvatar/Avatar';
 
 const generator = new AvatarGenerator();
 
@@ -78,7 +78,7 @@ const TeachersItem = ({ teacher }) => {
   return (
     <>
       <li className=" flex flex-wrap w-auto rounded-[24px] p-[24px] bg-bg-color gap-[48px]">
-        <CardAvatar teacher={teacher} />
+        <Avatar teacher={teacher} />
         <div>
           <div className="relative flex gap-[50px] lg:gap-[192px]">
             <div>

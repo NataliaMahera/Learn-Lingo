@@ -4,6 +4,7 @@ import TeachersList from '../../components/TeachersList/TeachersList';
 
 const Favorites = () => {
   const favoriteItems = useSelector(selectFavorites);
+  console.log('favoriteItems: ', favoriteItems);
 
   return (
     <section className="container pt-[32px] pb-[96px]">

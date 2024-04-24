@@ -4,6 +4,7 @@ import { selectAuthIsLoading } from '../../redux/auth/authSelectors';
 import Loader from '../Loader/Loader';
 
 const TeachersList = ({ teachers }) => {
+  console.log('teachers: ', teachers);
   const isLoading = useSelector(selectAuthIsLoading);
 
   if (isLoading) {
@@ -14,7 +15,7 @@ const TeachersList = ({ teachers }) => {
     <>
       <ul className="flex flex-col w-auto gap-[32px]">
         {teachers.length > 0 &&
-          teachers.map((teacher) => {
+          teachers?.map((teacher) => {
             return <TeachersItem key={teacher.id} teacher={teacher} />;
           })}
       </ul>

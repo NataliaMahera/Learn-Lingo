@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import sprite from '../../../assets/icons/sprite.svg';
 
 export const LinkHeaderNav = ({ children, to }) => {
@@ -145,6 +145,17 @@ export const LoadMoreButton = ({ children, onClick }) => {
     >
       {children}
     </button>
+  );
+};
+
+export const HeroButton = ({ children, to }) => {
+  return (
+    <Link
+      className="max-w-[267px] font-bold text-[18px} leading-[1.56] py-[16px] px-[88px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
+      to={to}
+    >
+      {children}
+    </Link>
   );
 };
 

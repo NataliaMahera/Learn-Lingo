@@ -20,11 +20,3 @@ const Favorites = () => {
 };
 
 export default Favorites;
-
-// {favoriteItems.length === 0 ? (
-//   <TeachersList teachers={favoriteItems} />
-// ) : (
-//   <p className="mt-[50px] font-medium text-[25px] leading-[1.5] text-center">
-//     💁Add teacher to your favorite list
-//   </p>
-// )}

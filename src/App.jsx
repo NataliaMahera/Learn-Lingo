@@ -17,16 +17,12 @@ const Home = lazy(() => import('./pages/Home/Home'));
 const Teachers = lazy(() => import('./pages/Teachers/Teachers'));
 const Favorites = lazy(() => import('./pages/Favorites/Favorites'));
 
-const test = import.meta.env.VITE_API_TEST;
-
 function App() {
-  console.log(test);
   const dispatch = useDispatch();
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        console.log(currentUser);
         dispatch(
           setUser({
             email: currentUser.email,

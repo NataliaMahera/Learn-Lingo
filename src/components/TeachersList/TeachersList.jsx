@@ -13,7 +13,7 @@ const TeachersList = ({ teachers }) => {
   return (
     <>
       <ul className="flex flex-col w-auto gap-[32px]">
-        {teachers.map((teacher) => {
+        {teachers?.map((teacher) => {
           return <TeachersItem key={teacher.id} teacher={teacher} />;
         })}
       </ul>

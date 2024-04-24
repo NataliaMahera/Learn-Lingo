@@ -14,11 +14,10 @@ const TeachersList = ({ teachers }) => {
   return (
     <>
       <ul className="flex flex-col w-auto gap-[32px]">
-        {teachers?.map((teacher) => {
-          const id = nanoid();
-          return <TeachersItem key={id} teacher={teacher} />;
-        })}
-        console.log(teachers);
+        {teachers.length > 0 &&
+          teachers.map((teacher) => {
+            return <TeachersItem key={teacher.id} teacher={teacher} />;
+          })}
       </ul>
     </>
   );

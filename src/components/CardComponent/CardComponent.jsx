@@ -11,7 +11,7 @@ const CardComponent = ({ teacher }) => {
         <li>
           <p>
             <span className="text-card-text-color">Speaks: </span>
-            <span className="underline"> {languages.join(', ')}</span>
+            <span className="underline"> {languages?.join(', ')}</span>
           </p>
         </li>
         <li>

@@ -1,7 +1,11 @@
-import React from 'react';
+import Hero from '../../components/Hero/Hero';
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <section className="px-[64px] flex flex-col justify-center items-center gap-[24px]">
+      <Hero />
+    </section>
+  );
 };
 
 export default Home;

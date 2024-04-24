@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Formik, Form } from 'formik';
 import { useSelector } from 'react-redux';
 import { selectAuthIsLoading } from '../../redux/auth/authSelectors';
 import Loader from '../Loader/Loader';
-import { options } from '../../constants';
+import { BOOKING_OPTIONS } from '../../constants';
 import { toast } from 'react-toastify';
 import { styleToastify } from '../Toster/tostify';
 import { BookingSchema } from '../../helpers/schemas';
@@ -11,7 +11,7 @@ const initialValues = {
   fullName: '',
   email: '',
   number: '',
-  reason: options[0].name,
+  reason: BOOKING_OPTIONS[0].name,
 };
 
 const BookLessonModal = ({ closeModal, teacher }) => {
@@ -72,7 +72,7 @@ const BookLessonModal = ({ closeModal, teacher }) => {
       >
         <Form autoComplete="off" className="flex flex-col gap-[18px]">
           <div className="flex flex-col gap-[16px] mb-[22px]">
-            {options.map(({ name, id }) => (
+            {BOOKING_OPTIONS.map(({ name, id }) => (
               <div key={id} className="custom-radio">
                 <Field
                   id={id}

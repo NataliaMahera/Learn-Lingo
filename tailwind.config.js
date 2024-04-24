@@ -31,6 +31,7 @@ export default {
       'bg-primary-color': '#f8f8f8',
       'border-color': 'rgba(18, 20, 23, 0.1)',
       'decor-text-element': 'rgba(18, 20, 23, 0.2)',
+      'decor-text-color': 'rgba(18, 20, 23, 0.7)',
       'error-color': '#da1414',
       'correct-color': '#3cbc81',
       'green-color': '#38cd3e',

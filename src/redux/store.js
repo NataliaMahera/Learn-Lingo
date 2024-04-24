@@ -22,7 +22,7 @@ const authConfig = {
 const favoritesConfig = {
   key: 'favorites',
   storage,
-  // whitelist: ['favoritesTeachers'],
+  whitelist: ['favoriteItems'],
 };
 
 export const store = configureStore({

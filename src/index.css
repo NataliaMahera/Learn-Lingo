@@ -49,3 +49,11 @@ body {
 .hero-list-item {
   @apply flex gap-[16px];
 }
+
+.add-favorite-icon {
+  @apply fill-none stroke-[2px] stroke-primary-text-color w-[20px] h-[20px];
+}
+
+.remove-favorite-icon {
+  @apply fill-accent-color stroke-accent-color w-[20px] h-[20px];
+}

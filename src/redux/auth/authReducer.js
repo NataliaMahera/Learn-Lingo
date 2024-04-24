@@ -9,7 +9,11 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.isLoggedIn = true;
       state.token = payload.token;
-      state.user = { name: payload.name, email: payload.email };
+      state.user = {
+        name: payload.name,
+        email: payload.email,
+        reloadListener: undefined,
+      };
       state.error = null;
     },
     removeUser: (state) => {

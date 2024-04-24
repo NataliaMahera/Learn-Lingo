@@ -11,6 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/authReducer';
+import { favoritesReducer } from './favorites/favoritesReducer';
 
 const authConfig = {
   key: 'auth',
@@ -18,14 +19,29 @@ const authConfig = {
   whitelist: ['token'],
 };
 
+const favoritesConfig = {
+  key: 'favorites',
+  storage,
+  // whitelist: ['favoritesTeachers'],
+};
+
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authConfig, authReducer),
+    favorites: persistReducer(favoritesConfig, favoritesReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoredActions: [
+          'auth/setUser',
+          FLUSH,
+          REHYDRATE,
+          PAUSE,
+          PERSIST,
+          PURGE,
+          REGISTER,
+        ],
       },
     }),
 });

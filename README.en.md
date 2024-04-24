@@ -28,7 +28,7 @@ suits their needs and add them to their favorites.
 2. Change the current working directory to the location where you want the
    cloned directory.
 3. Type `git clone`, and then paste the URL of the repository you want to clone
-   (https://github.com/JuliaTarasenko00/learn-lingo.git).
+   (https://github.com/NataliaMahera/Learn-Lingo.git).
 4. Press `Enter` to create your local clone.
 
 ## 🎯 Running the Project
@@ -60,7 +60,7 @@ Detailed technical task can be found in the:
 
 ### **Backend**:
 
-### **💬MockApi.io**
+### **💬Firebase_DB**
 
 ### **Utilits**:
 

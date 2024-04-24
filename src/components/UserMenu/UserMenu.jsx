@@ -19,7 +19,7 @@ const UserMenu = () => {
 
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className="flex gap-[15px] ">
       <h2>Welcome, {user.email} </h2>
       <LogoutBtn onClick={logOut} />
     </div>

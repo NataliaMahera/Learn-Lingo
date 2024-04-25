@@ -17,5 +17,3 @@ const Avatar = ({ teacher }) => {
 };
 
 export default Avatar;
-
-// w-[96px] h-[96px]

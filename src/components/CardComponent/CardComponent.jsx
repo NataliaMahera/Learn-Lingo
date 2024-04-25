@@ -1,12 +1,8 @@
 const CardComponent = ({ teacher }) => {
-  const { name, surname, languages, lesson_info, conditions } = teacher || {};
+  const { languages, lesson_info, conditions } = teacher || {};
 
   return (
     <>
-      <h2 className="text-[24px] leading-[1] font-medium text-primary-text-color mb-[32px]">
-        {name} {surname}
-      </h2>
-
       <ul className="flex flex-col gap-[8px] text-[16px] mb-[16px] leading-[1.5] font-medium text-primary-text-color">
         <li>
           <p>

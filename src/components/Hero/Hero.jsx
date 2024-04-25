@@ -2,6 +2,7 @@ import { HERO_OPTIONS } from '../../constants';
 import { TEACHERS_ROUTE } from '../../constants/routes';
 import { HeroButton } from '../ReUseComponents/Buttons/Buttons';
 import girl from '../../assets/img/hero/girl-book.png';
+import girl2x from '../../assets/img/hero/girl-book@2x.png';
 import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
@@ -31,7 +32,7 @@ const Hero = () => {
           </HeroButton>
         </div>
         <div className="mx-auto bg-secondary-accent-color rounded-[30px] max-w-[568px] ">
-          <img className="" src={girl} alt="girl" />
+          <img srcSet={`${girl} 1x, ${girl2x} 2x`} src={girl} alt="girl" />
         </div>
       </div>
       <ul className="flex border-dashed gap-y-[20px] justify-around flex-wrap border-[2px] border-accent-color py-[40px] rounded-[30px] mb-[32px]">

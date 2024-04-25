@@ -119,7 +119,7 @@ const BookLessonModal = ({ closeModal, teacher }) => {
           />
           <button
             type="submit"
-            className="hover:bg-accent-color-btn transition-colors text-[18px] leading-[1.56] font-bold mt-[22px] bg-accent-color p-y-[16px] w-full text-primary-text-color h-[60px] rounded-[12px] outline-none"
+            className="hover:bg-accent-color-btn focus:bg-accent-color-btn transition-colors text-[18px] leading-[1.56] font-bold mt-[22px] bg-accent-color p-y-[16px] w-full text-primary-text-color h-[60px] rounded-[12px] outline-none"
           >
             Book
           </button>

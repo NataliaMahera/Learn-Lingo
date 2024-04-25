@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import sprite from '../../../assets/icons/sprite.svg';
 
 export const LinkHeaderNav = ({ children, to }) => {
@@ -57,7 +57,7 @@ export const RegisterBtn = ({ onClick }) => {
   return (
     <button
       type="submit"
-      className="transition-colors bg-primary-text-color py-[14px] px-[39px] rounded-[12px] hover:text-accent-color text-[16px] leading-[1.25] font-bold text-bg-color"
+      className="transition-colors bg-primary-text-color py-[10px] px-[17px] md:py-[14px] md:px-[39px] rounded-[12px] hover:text-accent-color text-[16px] leading-[1.25] font-bold text-bg-color"
       onClick={onClick}
     >
       Registration
@@ -148,14 +148,17 @@ export const LoadMoreButton = ({ children, onClick }) => {
   );
 };
 
-export const HeroButton = ({ children, to }) => {
+export const HeroButton = ({ children, onClick }) => {
   return (
-    <Link
-      className="max-w-[267px] font-bold text-[18px} leading-[1.56] py-[16px] px-[88px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
-      to={to}
-    >
-      {children}
-    </Link>
+    <div>
+      <button
+        type="button"
+        className="whitespace-nowrap block font-bold text-[18px} leading-[1.56] py-[16px] px-[88px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    </div>
   );
 };
 

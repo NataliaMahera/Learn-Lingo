@@ -80,14 +80,14 @@ const TeachersItem = ({ teacher }) => {
       <li className=" flex flex-wrap w-auto rounded-[24px] p-[24px] bg-bg-color gap-[48px]">
         <Avatar teacher={teacher} />
         <div>
-          <div className="relative flex gap-[50px] lg:gap-[192px]">
+          <div className="relative flex flex-wrap gap-x-[50px] gap-y-[20px] lg:gap-[192px]">
             <div>
               <p className="text-[16px] leading-[1.5] font-medium text-card-text-color mb-[8px]">
                 Languages
               </p>
             </div>
             <div>
-              <ul className="flex flex-wrap text-[16px] leading-[1.5] font-medium text-primary-text-color">
+              <ul className="flex w-full flex-wrap text-[16px] leading-[1.5] font-medium text-primary-text-color">
                 <li className="flex justify-center items-center gap-[8px] ">
                   <svg className="w-[16px] h-[16px] stroke-primary-text-color fill-none ">
                     <use href={`${sprite}#icon-book-open`} />

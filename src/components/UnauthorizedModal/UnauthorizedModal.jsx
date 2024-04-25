@@ -15,7 +15,7 @@ const UnauthorizedModal = () => {
         Oops, you are not registered yet!
       </h1>
       <p className=" text-secondary-text-color text-center">
-        Register or log in your account and you will have an access to more
+        Register or log in into your account and you will have an access to more
         functions of using the site.
       </p>
     </div>

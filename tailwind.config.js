@@ -11,14 +11,6 @@ export default {
         lg: '128px',
       },
     },
-    screens: {
-      sm: '320px',
-      // => @media (min-width: 375px) { ... }
-      md: '768px',
-      // => @media (min-width: 768px) { ... }
-      lg: '1440px',
-      // => @media (min-width: 1440px) { ... }
-    },
     colors: {
       'primary-text-color': '#121417',
       'secondary-text-color': 'rgba(18, 20, 23, 0.8)',

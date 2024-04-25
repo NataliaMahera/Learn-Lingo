@@ -152,7 +152,7 @@ export const HeroButton = ({ children, onClick }) => {
   return (
     <button
       type="button"
-      className="whitespace-nowrap block font-bold text-[18px} leading-[1.56] py-[16px] px-[88px] rounded-[12px] bg-accent-color transition-colors focus:bg-accent-color-btn hover:bg-accent-color-btn"
+      className="whitespace-nowrap block font-bold text-[18px} leading-[1.56] py-[16px] px-[80px] rounded-[12px] bg-accent-color transition-colors focus:bg-accent-color-btn hover:bg-accent-color-btn"
       onClick={onClick}
     >
       {children}

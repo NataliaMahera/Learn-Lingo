@@ -3,16 +3,6 @@ import { getAuth } from 'firebase/auth';
 
 import { getDatabase } from 'firebase/database';
 
-// const {
-//   VITE_API_KEY,
-//   VITE_AUTH_DOMAIN,
-//   VITE_DATABASE_URL,
-//   VITE_PROJECT_ID,
-//   VITE_STORAGE_BACKET,
-//   VITE_MESSAGIN_SENDER_ID,
-//   VITE_API_ID,
-// } = import.meta.env;
-
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
   authDomain: import.meta.env.VITE_AUTH_DOMAIN,

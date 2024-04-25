@@ -4,8 +4,8 @@ import { HOME_ROUTE } from '../../constants/routes';
 
 const Footer = () => {
   return (
-    <section className="container py-[45px] ">
-      <div className="flex flex-wrap justify-center items-center gap-x-1">
+    <section className="py-[45px] mx-auto ">
+      <div className="flex flex-wrap justify-center items-center gap-x-1 mx-auto">
         <Link to={HOME_ROUTE} className="flex gap-x-[8px] items-center">
           <svg className="w-[22px] h-[22px] md:w-[20px] md:h-[20px]">
             <use href={sprite + '#icon-ukraine'}></use>

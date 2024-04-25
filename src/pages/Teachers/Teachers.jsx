@@ -23,22 +23,6 @@ const Teachers = () => {
   const isLoading = useSelector(selectAuthIsLoading);
   const cardLimitOnPage = 4;
 
-  // const getAllTeachersData = async () => {
-  //   try {
-  //     const dbRef = ref(getDatabase());
-  //     const snapshot = await get(child(dbRef, 'teachers/'));
-  //     if (snapshot.exists()) {
-  //       const allTeachersData = snapshot.val();
-  //       setTeachers(allTeachersData);
-  //       console.log('allTeachersData: ', allTeachersData);
-  //     } else {
-  //       console.log('No data available');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error fetching teachers data:', error);
-  //   }
-  // };
-
   const initialQuery = query(
     ref(db, 'teachers'),
     orderByKey(),
@@ -60,7 +44,6 @@ const Teachers = () => {
           setLoadMoreData(false);
       });
     } catch (error) {
-      console.error(error.message);
       toast.error(
         'Oops something went wrong, error fetching teachers',
         styleToastify
@@ -80,8 +63,6 @@ const Teachers = () => {
 
   useEffect(() => {
     getTeachersData(initialQuery);
-    // getAllTeachersData();
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -90,7 +71,7 @@ const Teachers = () => {
   }
 
   return (
-    <section className="container pt-[32px] pb-[96px]">
+    <section className="min-w-[320px] max-w-[1440px] min-h-[100vh] pt-[32px] pb-[96px] mx-auto px-[64px]">
       <TeachersList teachers={teachers} />
       {loadMoreData && teachers.length > 0 && (
         <LoadMoreButton onClick={handleLoadMoreData}>Load More</LoadMoreButton>

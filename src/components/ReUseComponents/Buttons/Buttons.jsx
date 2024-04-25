@@ -128,7 +128,7 @@ export const BookLessonButton = ({ children, onClick }) => {
   return (
     <button
       type="button"
-      className="mt-[32px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] transition-colors bg-accent-color  hover:bg-accent-color-btn"
+      className="whitespace-nowrap mt-[32px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] transition-colors bg-accent-color  hover:bg-accent-color-btn"
       onClick={onClick}
     >
       {children}
@@ -150,15 +150,13 @@ export const LoadMoreButton = ({ children, onClick }) => {
 
 export const HeroButton = ({ children, onClick }) => {
   return (
-    <div>
-      <button
-        type="button"
-        className="whitespace-nowrap block font-bold text-[18px} leading-[1.56] py-[16px] px-[88px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
-        onClick={onClick}
-      >
-        {children}
-      </button>
-    </div>
+    <button
+      type="button"
+      className="whitespace-nowrap block font-bold text-[18px} leading-[1.56] py-[16px] px-[88px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 };
 

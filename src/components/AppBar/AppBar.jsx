@@ -8,7 +8,7 @@ import AuthNav from '../AuthNav/AuthNav';
 const AppBar = () => {
   const isLoggedIn = useSelector(selectAuthIsLoggedIn);
   return (
-    <header className="w-full container flex flex-wrap py-[18px] md:py-[20px] justify-between items-center gap-y-[10px]">
+    <header className="flex flex-wrap min-w-[448px] py-[20px] justify-around items-center gap-y-[20px]">
       <Logo />
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}

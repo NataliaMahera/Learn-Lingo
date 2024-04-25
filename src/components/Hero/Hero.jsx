@@ -8,8 +8,8 @@ const Hero = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="flex-wrap flex mx-auto justify-between mb-[24px] items-center gap-y-[24px]">
-        <div className="mx-auto max-w-[720px] w-full bg-bg-color px-[64px] py-[98px] rounded-[30px]">
+      <div className="flex-wrap min-w-[320px] flex mx-auto w-full justify-between mb-[24px] items-center gap-y-[24px]">
+        <div className="mx-auto max-w-[720px] bg-bg-color px-[64px] py-[98px] rounded-[30px]">
           <h1 className="mb-[32px] max-w-[548px] text-[48px] leading-[1.17] font-medium text-primary-text-color">
             Unlock your potential with the best{' '}
             <span className="bg-secondary-accent-color rounded-[8px] italic px-[8px]">
@@ -30,7 +30,7 @@ const Hero = () => {
             Get started
           </HeroButton>
         </div>
-        <div className="mx-auto bg-secondary-accent-color rounded-[30px] w-full max-w-[568px] ">
+        <div className="mx-auto bg-secondary-accent-color rounded-[30px] max-w-[568px] ">
           <img className="" src={girl} alt="girl" />
         </div>
       </div>

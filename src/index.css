@@ -6,7 +6,6 @@ html,
 body {
   height: 100%;
 }
-
 #root {
   display: flex;
   flex-direction: column;
@@ -64,11 +63,4 @@ body {
 
 .remove-favorite-icon {
   @apply fill-accent-color stroke-accent-color w-[20px] h-[20px];
-}
-
-@layer components {
-  .max-container {
-    max-width: 1440px;
-    margin: 0, auto;
-  }
 }

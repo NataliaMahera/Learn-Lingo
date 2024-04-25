@@ -3,9 +3,9 @@ import sprite from '../../assets/icons/sprite.svg';
 const Avatar = ({ teacher }) => {
   const { name, surname, avatar_url } = teacher || {};
   return (
-    <div className=" relative flex justify-center items-center w-[120px] h-[120px] rounded-[50%] border-[3px] border-secondary-accent-color">
+    <div className="mb-[8px] relative p-[12px] flex justify-center items-center max-w-[120px] max-h-[120px] rounded-[50%] border-[3px] border-secondary-accent-color">
       <img
-        className="w-[96px] h-[96px] rounded-[50%] bg-secondary-accent-color "
+        className="block h-auto max-w-full rounded-[50%] bg-secondary-accent-color "
         src={avatar_url}
         alt={`${name}, ${surname}`}
       />
@@ -17,3 +17,5 @@ const Avatar = ({ teacher }) => {
 };
 
 export default Avatar;
+
+// w-[96px] h-[96px]

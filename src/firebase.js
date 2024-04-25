@@ -3,7 +3,9 @@ import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 
 const {
+  VITE_API_KEY,
   VITE_AUTH_DOMAIN,
+  VITE_DATABASE_URL,
   VITE_PROJECT_ID,
   VITE_STORAGE_BACKET,
   VITE_MESSAGIN_SENDER_ID,
@@ -11,10 +13,9 @@ const {
 } = import.meta.env;
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyB27k5q4hCUt97rf8cKwbDVqFgq7wjS9o4',
+  apiKey: VITE_API_KEY,
   authDomain: VITE_AUTH_DOMAIN,
-  databaseURL:
-    'https://learnlingoauth-default-rtdb.europe-west1.firebasedatabase.app/',
+  databaseURL: VITE_DATABASE_URL,
   projectId: VITE_PROJECT_ID,
   storageBucket: VITE_STORAGE_BACKET,
   messagingSenderId: VITE_MESSAGIN_SENDER_ID,

@@ -7,7 +7,7 @@ export const LinkHeaderNav = ({ children, to }) => {
       to={to}
       className={({ isActive }) => {
         return (
-          'font-normal transition-colors hover:text-accent-color-btn text-[14px} md:text-[16px] leading-[1.25] ' +
+          'font-normal transition-colors focus:text-accent-color-btn hover:text-accent-color-btn text-[14px} md:text-[16px] leading-[1.25] ' +
           (!isActive
             ? ' text-primary-text-color'
             : ' text-accent-color transition')
@@ -27,7 +27,7 @@ export const LoginBtn = ({ onClick }) => {
       </svg>
       <button
         type="submit"
-        className="transition-colors hover:text-accent-color text-[16px] leading-[1.25] font-bold text-primary-text-color"
+        className="transition-colors focus:text-accent-color hover:text-accent-color text-[16px] leading-[1.25] font-bold text-primary-text-color"
         onClick={onClick}
       >
         Log in
@@ -44,7 +44,7 @@ export const LogoutBtn = ({ onClick }) => {
       </svg>
       <button
         type="submit"
-        className="transition-colors hover:text-accent-color text-[16px] leading-[1.25] font-bold text-primary-text-color"
+        className="transition-colors focus:text-accent-color hover:text-accent-color text-[16px] leading-[1.25] font-bold text-primary-text-color"
         onClick={onClick}
       >
         Log out
@@ -57,7 +57,7 @@ export const RegisterBtn = ({ onClick }) => {
   return (
     <button
       type="submit"
-      className="transition-colors bg-primary-text-color py-[10px] px-[17px] md:py-[14px] md:px-[39px] rounded-[12px] hover:text-accent-color text-[16px] leading-[1.25] font-bold text-bg-color"
+      className="transition-colors bg-primary-text-color py-[10px] px-[17px] md:py-[14px] md:px-[39px] rounded-[12px] focus:text-accent-color hover:text-accent-color text-[16px] leading-[1.25] font-bold text-bg-color"
       onClick={onClick}
     >
       Registration
@@ -69,7 +69,7 @@ export const FormBtn = ({ children }) => {
   return (
     <button
       type="submit"
-      className="transition-colors hover:bg-accent-color-btn text-[18px] leading-[1.56] font-bold mt-[22px] bg-accent-color p-y-[16px] w-full text-primary-text-color h-[60px] rounded-[12px] outline-none"
+      className="transition-colors focus:bg-accent-color-btn hover:bg-accent-color-btn text-[18px] leading-[1.56] font-bold mt-[22px] bg-accent-color p-y-[16px] w-full text-primary-text-color h-[60px] rounded-[12px] outline-none"
     >
       {children}
     </button>
@@ -116,7 +116,7 @@ export const ReadMoreButton = ({ children, onClick }) => {
   return (
     <button
       type="button"
-      className="underline transition-colors hover:text-accent-color"
+      className="underline transition-colors focus:text-accent-color hover:text-accent-color"
       onClick={onClick}
     >
       {children}
@@ -128,7 +128,7 @@ export const BookLessonButton = ({ children, onClick }) => {
   return (
     <button
       type="button"
-      className="whitespace-nowrap mt-[32px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] transition-colors bg-accent-color  hover:bg-accent-color-btn"
+      className="whitespace-nowrap mt-[32px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] transition-colors bg-accent-color focus:bg-accent-color-btn  hover:bg-accent-color-btn"
       onClick={onClick}
     >
       {children}
@@ -140,7 +140,7 @@ export const LoadMoreButton = ({ children, onClick }) => {
   return (
     <button
       type="button"
-      className="block m-auto mt-[64px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
+      className="block m-auto mt-[64px] font-bold text-[18px} leading-[1.56] py-[16px] px-[48px] rounded-[12px] bg-accent-color transition-colors focus:bg-accent-color-btn hover:bg-accent-color-btn"
       onClick={onClick}
     >
       {children}
@@ -152,7 +152,7 @@ export const HeroButton = ({ children, onClick }) => {
   return (
     <button
       type="button"
-      className="whitespace-nowrap block font-bold text-[18px} leading-[1.56] py-[16px] px-[88px] rounded-[12px] bg-accent-color transition-colors hover:bg-accent-color-btn"
+      className="whitespace-nowrap block font-bold text-[18px} leading-[1.56] py-[16px] px-[88px] rounded-[12px] bg-accent-color transition-colors focus:bg-accent-color-btn hover:bg-accent-color-btn"
       onClick={onClick}
     >
       {children}
@@ -167,24 +167,9 @@ export const ToggleFavoritesButton = ({ onClick }) => {
       className="absolute top-[24px] right-[24px] flex justify-start ease-in-out duration-100 hover:scale-[1.035] hover:contrast-[0.9] cursor-pointer "
       onClick={onClick}
     >
-      <svg className="ease-in-out duration-100 hover:scale-[1.035] hover:contrast-[0.9] fill-none stroke-[1.5px] stroke-primary-text-color w-[26px] h-[26px]">
+      <svg className="ease-in-out duration-100 focus:scale-[1.035] hover:scale-[1.035] focus:contrast-[0.9] hover:contrast-[0.9] fill-none stroke-[1.5px] stroke-primary-text-color w-[26px] h-[26px]">
         <use href={sprite + '#icon-heart'}></use>
       </svg>
     </button>
   );
 };
-
-// export const ToggleFavoritesDeleteButton = ({ onClick, id }) => {
-//   return (
-//     <button
-//       type="button"
-//       className="ease-in-out duration-100 hover:scale-[1.035] hover:contrast-[0.9] absolute cursor-pointer top-[14px] right-[14px] "
-//       onClick={onClick}
-//       id={id}
-//     >
-//       <svg className="ease-in-out duration-100 hover:scale-[1.035] hover:contrast-[0.9] stroke-[1.5px] stroke-accent-color fill-accent-color w-[18px] h-[18px]">
-//         <use href={sprite + '#icon-active-heart'}></use>
-//       </svg>
-//     </button>
-//   );
-// };
